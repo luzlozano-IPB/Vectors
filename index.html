@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vectors</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+:root {
+  --bg: #f6f7fb;
+  --paper: #ffffff;
+  --ink: #182033;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --accent-soft: #eef0ff;
+  --line: #e5e7eb;
+  --formula: #f8f9ff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 15% 0%, #e8ebff 0, transparent 32rem),
+    radial-gradient(circle at 90% 10%, #edf5ff 0, transparent 28rem),
+    var(--bg);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+.wrapper { max-width: 980px; margin: 0 auto; padding: 34px 20px 70px; }
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 44px clamp(26px, 5vw, 58px);
+  color: white;
+  background: linear-gradient(135deg, #25206f, #5b5ce2 62%, #7586f2);
+  box-shadow: 0 24px 60px rgba(45, 43, 130, .20);
+  margin-bottom: 26px;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 220px; height: 220px; border-radius: 50%;
+  border: 4px solid rgba(255,255,255,.18);
+  right: -55px; top: -70px;
+}
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  line-height: 1.02;
+  margin: 0;
+  letter-spacing: -.04em;
+}
+.grid { display: grid; gap: 18px; }
+.card {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px 30px 30px;
+  box-shadow: 0 10px 28px rgba(16, 24, 40, .055);
+}
+h2 {
+  margin: 0 0 18px;
+  font-size: 1.45rem;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+h3, h4 { font-weight: normal; margin: 5px 0; }
+p { margin: 0 0 12px; }
+ul, ol { margin-top: 8px; }
+li { margin-bottom: 8px; }
+
+.formula-box {
+      background-color: #f1f7fc;
+      border-left: 4px solid var(--accent-color);
+      padding: 10px 15px;
+      margin: 10px 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+.section {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px 30px 30px;
+  box-shadow: 0 10px 28px rgba(16, 24, 40, .055);
+}
+.section h2 { color: var(--ink); }
+.callout {
+  background: #ffffff;
+  border-left: 5px solid #0066cc;
+  padding: 20px 24px;
+}
+.callout h2 { color: #0047AB; }
+@media (max-width: 600px) {
+  .wrapper { padding: 18px 12px 40px; }
+  .section, .card { padding: 24px 18px; }
+}
+@media print {
+  body { background: white; }
+  .wrapper { max-width: none; padding: 0; }
+  .hero, .section, .card { box-shadow: none; break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<header class="hero">
+<h1>Vectors</h1>
+</header>
+<div class="card">
+<h2>1. <a href="https://www.geogebra.org/graphing/ctbqyzhx">  Vector posició d'un punt </a> </h2>
+<p>Un <strong>vector de posició</strong> \(\vec{r}\) o \(\vec{OP}\) situa un punt \(P(x, y)\) a l'espai respecte a l'origen de coordenades \(O(0,0)\). Les seves components cartesianes coincideixen exactament amb les coordenades del punt:</p>
+
+<div class="formula-box">
+      $$\vec{OP} = (x, y)$$
+    </div>
+    <li><strong>Forma polar:</strong> Es defineix pel seu <strong>mòdul</strong> \(r\) (longitud) i el seu <strong>argument</strong> \(\theta\) (angle respecte a l'eix positiu X): \((r_\theta)\).
+        <ul>
+<div class="formula-box">         
+<li>Mòdul: \(r = |\vec{v}| = \sqrt{x^2 + y^2}\)</li>
+<li>Argument: \(\theta = \arctan\left(\frac{y}{x}\right)\) (cal identificar el quadrant per veure si cal sumar 180º al resultat de la calculadora) </li> 
+
+</div> 
+</ul>
+</li>
+</div>
+<div class="card">
+<h2>2. <a href="https://www.geogebra.org/m/jzgtxecc">   Vector entre dos punts A i B (Vector lliure) </a></h2>
+<p>Si tenim un punt origen \(A(x_1, y_1)\) i un punt extrem \(B(x_2, y_2)\), el vector que els uneix es calcula com a <strong>extrem menys origen</strong>:</p>
+<div class="formula-box">
+      $$\vec{AB} = B - A = (x_2 - x_1, \, y_2 - y_1)$$
+    </div>
+<p>Un <strong>vector lliure</strong> representa un desplaçament determinat sense estar marcat per un punt fix d'origen.</p>
+<ul>
+<li><strong>Forma cartesiana:</strong> Es defineix per les seves components de desplaçament horitzontal i vertical: \(\vec{v} = (v_x, v_y)\).</li>
+<li><strong>Forma polar:</strong> Es defineix pel seu <strong>mòdul</strong> \(r\) (longitud) i el seu <strong>argument</strong> \(\theta\) (angle respecte a l'eix positiu X): \((r_\theta)\).
+        <ul>
+<div class="formula-box">  
+  <h3><strong>Pas de forma cartesiana a forma polar:</strong></h3>        
+<li>Mòdul: \(r = |\vec{v}| = \sqrt{v_x^2 + v_y^2}\)</li>
+<li>Argument: \(\theta = \arctan\left(\frac{v_y}{v_x}\right)\) (depenent del quadrant  +  180º) </li>
+</div> 
+<div class="formula-box"> 
+<h3><strong>Pas de polar a cartesiana:</strong></h3> \(v_x = r \cdot \cos\theta, \quad v_y = r \cdot \sin\theta\)</li>
+</div> 
+</ul>
+</li>
+</ul>
+</div>
+<div class="card">
+<h2>3. <a href="https://www.geogebra.org/m/hgfps7wb"> Càlcul de l'extrem o l'origen </a></h2>
+<p>A partir de la relació \(\vec{AB} = B - A\):</p>
+<ul>
+<li><strong>Trobar l'extrem \(B\):</strong> \(B = A + \vec{AB}\)</li>
+<li><strong>Trobar l'origen \(A\):</strong> \(A = B - \vec{AB}\)</li>
+</ul>
+</div>
+<div class="card">
+<h2>4. <a href="https://www.geogebra.org/graphing/pk4fjwgc"> Identitat de dos vectors  </a> </h2>
+<p>Dos vectors són <strong>iguals</strong> (o equivalents) si tenen el mateix mòdul, direcció i sentit. En coordenades, impliquen el mateix desplaçament:</p>
+<div class="formula-box">
+      $$\vec{u} = \vec{v} \iff (u_x, u_y) = (v_x, v_y)$$
+    </div>
+</div>
+<div class="card">
+<h2>5. Operacions amb vectors</h2>
+<ul>
+<li><strong> <a href="https://www.geogebra.org/graphing/wpuvekxh"> Suma de vectors: </a></strong> Es sumen les seves components directament:
+  <div class="formula-box"> 
+        $$\vec{u} + \vec{v} = (u_x + v_x, \, u_y + v_y)$$
+        </div>
+      </li>
+<li><strong> <a href="https://www.geogebra.org/m/f2fmceru"> Producte per un escalar </a> \(k \in \mathbb{R}\):</strong> Es multiplica cada component pel nombre \(k\):
+  <div class="formula-box"> 
+        $$k \cdot \vec{u} = (k \cdot u_x, \, k \cdot u_y)$$
+        </div>
+      </li>
+</ul>
+</div>
+<div class="card">
+<h2>6. <a href="https://www.geogebra.org/m/nmefcaqt">Vector unitari d'un vector </a> </h2>
+<p>Un vector unitari \(\hat{u}\) té mòdul 1 i conserva la mateixa direcció que \(\vec{u}\). <br> Pot tenir el mateix sentit (dividint el vector pel seu mòdul) o contrari (dividint el vector pel seu mòdul i canvant-lo de signe) </p>
+<div class="formula-box">
+      $$\hat{u_1} = \frac{\vec{u}}{|\vec{u}|} = \left( \frac{u_x}{|\vec{u}|}, \frac{u_y}{|\vec{u}|} \right)$$ <br>
+            $$\hat{u_2} = \frac{\vec{u}}{-|\vec{u}|} = \left( \frac{u_x}{-|\vec{u}|}, \frac{u_y}{-|\vec{u}|} \right)$$
+    </div>
+</div>
+<div class="card">
+<h2>7.  Dependència i independència lineal.  </h2>
+<ul>
+<li><strong>Dependència lineal:</strong> Dos vectors són linealment dependents si són proporcionals (\(\vec{u} = k \cdot \vec{v}\)), és a dir, tenen la mateixa direcció.</li>
+<li><strong>Independència lineal:</strong> Dos vectors són linealment independents si no són proporcionals; cap no es pot expressar en funció de l'altre.</li>
+<li><strong> <a href="https://www.geogebra.org/graphing/pwuqa4p8">  Una combinació lineal de dos vectors (\(\vec{u}, \vec{v}\)) </strong></a>   és qualsevol resultat de sumar aquests vectors multiplicats per qualsevol escalar (nombre real) <br> 
+  <div class="formula-box">
+  $$\vec{w} = a\vec{u} + b\vec{v} $$
+       </div> 
+  Tres vectors en el pla són sempre linalment dependents, es a dir, sempre podrem expressar un d'ells com a combinació lineal dels altres dos.
+</ul>
+</div><div class="card">
+<h2>8.  Bases del pla.  Base canònica.</h2>
+<ul>
+<li><strong> <a href="https://www.geogebra.org/graphing/fsn5czar">  Base: </a></strong> Dos vectors linealment independents en el pla \(\mathcal{B} = \{\vec{u}, \vec{v}\}\) formen una base. Qualsevol vector \(\vec{w}\) es pot escriure de forma única com a combinació lineal seva. <br> Els coeficients de la combinació lineal són les components en aquesta base.
+      </li>
+      <div class="formula-box">
+  $$\vec{w} = a\vec{u} + b\vec{v} \implies \vec{w} = (a, b)_{\mathcal{B}}$$
+       </div> 
+      <li><strong> <a href="https://www.geogebra.org/graphing/bqt4sbvz"> Base canònica:</a> </strong> Els vectors   \(\{\vec{e_1}=(1,0), \vec{e_2}=(0,1)\}\) formen una base canònica. Qualsevol vector \(\vec{w}\) es pot escriure de forma única com a combinació lineal:
+   <div class="formula-box">
+  $$\vec{w} = x\vec{e_1} + y\vec{e_2} \implies \vec{v} = (x, y) $$
+       </div> 
+        Les components en base canònica són les components cartesianes.
+      </li>
+</ul>
+</div>
+<div class="card">
+<h2>  9. <a href="https://www.geogebra.org/m/bmdm4dre">  Producte escalar de vectors </a> (\(\vec{u} \cdot \vec{v}\))</h2>
+<p>El resultat del producte escalar és un <strong>nombre real</strong> (un escalar).</p>
+<ul>
+<li><strong>Forma polar (mètode geomètric):</strong>  
+ <div class="formula-box"> <span class="formula"> $$ \vec{u} \cdot \vec{v} = |\vec{u}| \cdot |\vec{v}| \cdot \cos\alpha $$</span></div>
+</li>
+<li><strong>Forma cartesiana (mètode algebraic):</strong>   <div class="formula-box">  <span class="formula"> $$ \vec{u} \cdot \vec{v} = u_x \cdot v_x + u_y \cdot v_y $$</span> </div> </li>
+</ul>
+</div>
+<div class="card">
+<h2>10. Aplicacions</h2>
+<ol class="indent-list no-bullets">
+<h3> <strong>10.1 Vectors paral·lels i perpendiculars a \(\vec{v} = (a, b)\) </strong></h3>
+<ul>
+<li><strong>Paral·lels:</strong> Si les seves components són proporcionals. <br/> Qualsevol vector proporcional. 
+  <div class="formula-box"> $$ k \cdot (a, b) = (ka, kb) $$ </div> </li>
+<li><strong>Perpendiculars (Ortogonals):</strong> Si el seu producte escalar és 0. <br/> S'intercanvien les components i es canvia un signe de dada:
+      <div class="formula-box">  $$\vec{v}^\perp = (-b, a) \quad \text{o} \quad (b, -a)$$ </div>
+      </li>
+</ul>
+
+<h3> <strong>10.2 Angle entre dos vectors</strong></h3>
+<p>Igualant la forma polar i cartesiana del producte escalar:</p>
+<div class="formula-box">
+      $$\cos\alpha = \frac{\vec{u} \cdot \vec{v}}{|\vec{u}| \cdot |\vec{v}|} = \frac{u_x v_x + u_y v_y}{\sqrt{u_x^2 + u_y^2} \cdot \sqrt{v_x^2 + v_y^2}}$$
+    </div>
+
+
+
+<h3> <strong>10.3  Punt mig M entre dos punts A i B</strong></h3>
+<p>És la mitjana aritmètica de les coordenades dels punts extrems:</p>
+<div class="formula-box">
+      $$M = \frac{A + B}{2} = \left( \frac{x_1 + x_2}{2}, \, \frac{y_1 + y_2}{2} \right)$$
+    </div>
+
+<h3> <strong>10.4  Divisió d'un segment AB en n parts iguals</strong></h3>
+<p>Per dividir un segment en \(n\) parts iguals cal trobar \(n-1\) punts intermedis. El vector pas \(\vec{p}\) és:</p>
+<div class="formula-box">
+      $$\vec{p} = \frac{1}{n} \vec{AB}$$
+    </div>
+<p>Els punts es calculen sumant aquest pas de forma acumulativa:</p>
+<p>$$P_1 = A + \vec{p}, \quad P_2 = A + 2\vec{p}, \quad \dots, \quad P_{n-1} = A + (n-1)\vec{p}$$</p>
+
+<h3> <strong>10.5  Relació entre els vèrtices d'un paral·lelogram ABCD</strong></h3>
+<p>En un paral·lelogram de vèrtices consecutius \(A, B, C, D\):</p>
+<ul>
+<li>Els costats oposats són vectors iguals: \(\vec{AB} = \vec{DC} \quad \text{o} \quad \vec{AD} = \vec{BC}\)</li>
+<li>Les diagonals es tallen en el seu punt mig: \(M_{AC} = M_{BD} \implies \frac{A+C}{2} = \frac{B+D}{2}\)</li>
+</ul>
+
+<h3> <strong>10.6  Aplicacions a la física</strong></h3>
+<p><strong>Suma de forces/velocitats:</strong> La força o velocitat resultant és la suma vectorial per components de totes les forces individuals aplicades:</p>
+<div class="formula-box">
+      $$\vec{F}_{\text{total}} = \sum \vec{F}_i = \left( \sum F_{ix}, \sum F_{iy} \right)$$
+    </div>
+
+<h3> <strong>10.7  Àrea d'un triangle</h2>
+<p>Donat un triangle format pels punts \(A, B\) i \(C\), l'àrea és la meitat de l'àrea del paral·lelogram generat pels vectors \(\vec{AB} = (u_1, u_2)\) i \(\vec{AC} = (v_1, v_2)\):</p>
+<div class="formula-box">
+      $$\text{Àrea} = \frac{1}{2} |u_1 v_2 - u_2 v_1|$$
+    </div>
+</div>
+</ol>
+  </div>
+</main>
+</div>
+</body>
+</html>
