@@ -165,9 +165,9 @@ li { margin-bottom: 8px; }
 <div class="card">
 <h2>3. <a href="https://www.geogebra.org/m/hgfps7wb"> Càlcul de l'extrem o l'origen </a></h2>
 <p>A partir de la relació \(\vec{AB} = B - A\):</p>
-<ul>
-<li><strong>Trobar l'extrem \(B\):</strong> \(B = A + \vec{AB}\)</li>
-<li><strong>Trobar l'origen \(A\):</strong> \(A = B - \vec{AB}\)</li>
+<div class="formula-box"> <ul>
+<li><strong>  Extrem  \(B\): </strong>     \(B = A + \vec{AB}\)</li>
+<li><strong>  Origen  \(A\): </strong>     \(A = B - \vec{AB}\)</li></div>
 </ul>
 </div>
 <div class="card">
@@ -194,10 +194,10 @@ li { margin-bottom: 8px; }
 </div>
 <div class="card">
 <h2>6. <a href="https://www.geogebra.org/m/nmefcaqt">Vector unitari d'un vector </a> </h2>
-<p>Un vector unitari \(\hat{u}\) té mòdul 1 i conserva la mateixa direcció que \(\vec{u}\). <br> Pot tenir el mateix sentit (dividint el vector pel seu mòdul) o contrari (dividint el vector pel seu mòdul i canvant-lo de signe) </p>
+<p>Un vector unitari \(\hat{u}\) té mòdul 1 i conserva la mateixa direcció que \(\vec{u}\). <br> Pot tenir el mateix sentit (dividint el vector pel seu mòdul) o contrari (dividint el vector pel seu mòdul i canviant-lo de signe) </p>
 <div class="formula-box">
-      $$\hat{u_1} = \frac{\vec{u}}{|\vec{u}|} = \left( \frac{u_x}{|\vec{u}|}, \frac{u_y}{|\vec{u}|} \right)$$ <br>
-            $$\hat{u_2} = \frac{\vec{u}}{-|\vec{u}|} = \left( \frac{u_x}{-|\vec{u}|}, \frac{u_y}{-|\vec{u}|} \right)$$
+      $$\hat{u_1} = \frac{\vec{u}}{|\vec{u}|} = \left( \frac{u_x}{|\vec{u}|}, \frac{u_y}{|\vec{u}|} \right) \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;
+          \hat{u_2} = \frac{\vec{u}}{-|\vec{u}|} = \left( \frac{-u_x}{|\vec{u}|}, \frac{-u_y}{|\vec{u}|} \right)$$
     </div>
 </div>
 <div class="card">
@@ -242,41 +242,45 @@ li { margin-bottom: 8px; }
 <ol class="indent-list no-bullets">
 <h3> <strong>10.1 Vectors paral·lels i perpendiculars a \(\vec{v} = (a, b)\) </strong></h3>
 
-<strong>Paral·lels:</strong> Si les seves components són proporcionals. <br/> Qualsevol vector proporcional. 
+<strong>Paral·lels:</strong> Si les seves components són proporcionals. <br/> Un vector paral·lel es construeix multiplicant o dividint les dues components pel mateix nombre. 
   </ul> <div class="formula-box"><ul> $$ k \cdot (a, b) = (ka, kb) $$ </div> </li>
-<strong>Perpendiculars (Ortogonals):</strong> Si el seu producte escalar és 0. <br/> S'intercanvien les components i es canvia un signe de dada:
+<strong>Perpendiculars (Ortogonals):</strong> Si el seu producte escalar és 0. <br/> Un vector perpendicular es construeix intercanviant les components i canviant una de signe.
       <div class="formula-box">  $$\vec{v}^\perp = (-b, a) \quad \text{o} \quad (b, -a)$$ </div>
       </li>
 </ul>
 
 <h3> <strong>10.2 Angle entre dos vectors</strong></h3>
-<p>Igualant la forma polar i cartesiana del producte escalar:</p>
+<p>Igualant la forma polar i cartesiana del producte escalar, aïllant el cosinus i calculant el arcocosinus.</p>
 <div class="formula-box">
       $$\cos\alpha = \frac{\vec{u} \cdot \vec{v}}{|\vec{u}| \cdot |\vec{v}|} = \frac{u_x v_x + u_y v_y}{\sqrt{u_x^2 + u_y^2} \cdot \sqrt{v_x^2 + v_y^2}}$$
     </div>
+<h3><strong>10.3 Punt mig M entre dos punts \(A = (x_1, y_1)\) i \(B = (x_2, y_2)\)</strong></h3>
 
-
-
-<h3> <strong>10.3  Punt mig M entre dos punts A i B</strong></h3>
-<p>És la mitjana aritmètica de les coordenades dels punts extrems:</p>
+<p>És la mitjana aritmètica de les coordenades dels punts extrems.</p>
 <div class="formula-box">
-      $$M = \frac{A + B}{2} = \left( \frac{x_1 + x_2}{2}, \, \frac{y_1 + y_2}{2} \right)$$
+      $$M = A+ \frac{1}{2} \vec{AB}  = \left(x_1 + \frac{x_2 - x_1}{2}, \, y_1 + \frac{y_2 - y_1}{2} \right) = \left( \frac{x_1 + x_2}{2}, \, \frac{y_1 + y_2}{2} \right)= \frac{A + B}{2}$$
     </div>
 
 <h3> <strong>10.4  Divisió d'un segment AB en n parts iguals</strong></h3>
-<p>Per dividir un segment en \(n\) parts iguals cal trobar \(n-1\) punts intermedis. El vector pas \(\vec{p}\) és:</p>
+<p>Per dividir un segment en \(n\) parts iguals cal trobar \(n-1\) punts intermedis. <p>El vector \(\vec{p}\) és l'enèsima part del vector  \(\vec{AB}\) i els punts es calculen sumant aquest vector de forma acumulativa.</p>
 <div class="formula-box">
       $$\vec{p} = \frac{1}{n} \vec{AB}$$
+      $$\begin{aligned}
+    \mathbf{P_1}= A + \vec{p}, \;\;\;\;\;\;
+    \mathbf{P_2}= A + 2\vec{p}, \;\;\;\;\;\;
+    \mathbf{P_3}= A + 3\vec{p}, \;\;\;\;\;\;
+                     \;\;\;  \dots,  \;\;\;
+    \mathbf{P_k}= A + k\vec{p}, \quad \text{per a } k = 1, 2, \dots, n-1
+  \end{aligned}$$
     </div>
-<p>Els punts es calculen sumant aquest pas de forma acumulativa:</p>
-<p>$$P_1 = A + \vec{p}, \quad P_2 = A + 2\vec{p}, \quad \dots, \quad P_{n-1} = A + (n-1)\vec{p}$$</p>
+
 
 <h3> <strong>10.5  Relació entre els vèrtices d'un paral·lelogram ABCD</strong></h3>
 <p>En un paral·lelogram de vèrtices consecutius \(A, B, C, D\):</p>
-<ul>
+<div class="formula-box">   <ul>
 <li>Els costats oposats són vectors iguals: \(\vec{AB} = \vec{DC} \quad \text{o} \quad \vec{AD} = \vec{BC}\)</li>
 <li>Les diagonals es tallen en el seu punt mig: \(M_{AC} = M_{BD} \implies \frac{A+C}{2} = \frac{B+D}{2}\)</li>
-</ul>
+</div></ul>
 
 <h3> <strong>10.6  Aplicacions a la física</strong></h3>
 <p><strong>Suma de forces/velocitats:</strong> La força o velocitat resultant és la suma vectorial per components de totes les forces individuals aplicades:</p>
