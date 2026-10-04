@@ -77,8 +77,10 @@ ul, ol { margin-top: 8px; }
 li { margin-bottom: 8px; }
 
 .formula-box {
+  
       background-color: #e2f0fd;
       border-left: 4px solid var(--accent-color);
+       border-left: 4px solid #3b82f6; /* Aquesta línia fa el destacat vertical */
       padding: 10px 15px;
       margin: 10px 0;
       border-radius: 0 4px 4px 0;
@@ -127,9 +129,9 @@ li { margin-bottom: 8px; }
 <div class="formula-box">
       $$\vec{OP} = (x, y)$$
     </div>
-    <li><strong>Forma polar:</strong> Es defineix pel seu <strong>mòdul</strong> \(r\) (longitud) i el seu <strong>argument</strong> \(\theta\) (angle respecte a l'eix positiu X): \((r_\theta)\).
-        <ul>
-<div class="formula-box">         
+    <strong>Forma polar:</strong> Es defineix pel seu <strong>mòdul</strong> \(r\) (longitud) i el seu <strong>argument</strong> \(\theta\) (angle respecte a l'eix positiu X): \((r_\theta)\).
+       
+<div class="formula-box">      <ul>    
 <li>Mòdul: \(r = |\vec{v}| = \sqrt{x^2 + y^2}\)</li>
 <li>Argument: \(\theta = \arctan\left(\frac{y}{x}\right)\) (cal identificar el quadrant per veure si cal sumar 180º al resultat de la calculadora) </li> 
 
@@ -147,14 +149,14 @@ li { margin-bottom: 8px; }
 <ul>
 <li><strong>Forma cartesiana:</strong> Es defineix per les seves components de desplaçament horitzontal i vertical: \(\vec{v} = (v_x, v_y)\).</li>
 <li><strong>Forma polar:</strong> Es defineix pel seu <strong>mòdul</strong> \(r\) (longitud) i el seu <strong>argument</strong> \(\theta\) (angle respecte a l'eix positiu X): \((r_\theta)\).
-        <ul>
-<div class="formula-box">  
+ </ul>      
+<div class="formula-box">   <ul> 
   <h3><strong>Pas de forma cartesiana a forma polar:</strong></h3>        
 <li>Mòdul: \(r = |\vec{v}| = \sqrt{v_x^2 + v_y^2}\)</li>
 <li>Argument: \(\theta = \arctan\left(\frac{v_y}{v_x}\right)\) (depenent del quadrant  +  180º) </li>
 </div> 
-<div class="formula-box"> 
-<h3><strong>Pas de polar a cartesiana:</strong></h3> \(v_x = r \cdot \cos\theta, \quad v_y = r \cdot \sin\theta\)</li>
+<div class="formula-box"> <ul> 
+<h3><strong>Pas de polar a cartesiana:</strong></h3> <li>\(v_x = r \cdot \cos\theta\)  </li><li>\(v_y = r \cdot \sin\theta\)</li>
 </div> 
 </ul>
 </li>
@@ -177,9 +179,9 @@ li { margin-bottom: 8px; }
 </div>
 <div class="card">
 <h2>5. Operacions amb vectors</h2>
-<ul>
+
 <li><strong> <a href="https://www.geogebra.org/graphing/wpuvekxh"> Suma de vectors: </a></strong> Es sumen les seves components directament:
-  <div class="formula-box"> 
+  <div class="formula-box"> <ul>
         $$\vec{u} + \vec{v} = (u_x + v_x, \, u_y + v_y)$$
         </div>
       </li>
@@ -204,7 +206,7 @@ li { margin-bottom: 8px; }
 <li><strong>Dependència lineal:</strong> Dos vectors són linealment dependents si són proporcionals (\(\vec{u} = k \cdot \vec{v}\)), és a dir, tenen la mateixa direcció.</li>
 <li><strong>Independència lineal:</strong> Dos vectors són linealment independents si no són proporcionals; cap no es pot expressar en funció de l'altre.</li>
 <li><strong> <a href="https://www.geogebra.org/graphing/pwuqa4p8">  Una combinació lineal de dos vectors (\(\vec{u}, \vec{v}\)) </strong></a>   és qualsevol resultat de sumar aquests vectors multiplicats per qualsevol escalar (nombre real) <br> 
-  <div class="formula-box">
+  </ul><div class="formula-box"><ul> 
   $$\vec{w} = a\vec{u} + b\vec{v} $$
        </div> 
   Tres vectors en el pla són sempre linalment dependents, es a dir, sempre podrem expressar un d'ells com a combinació lineal dels altres dos.
@@ -214,11 +216,11 @@ li { margin-bottom: 8px; }
 <ul>
 <li><strong> <a href="https://www.geogebra.org/graphing/fsn5czar">  Base: </a></strong> Dos vectors linealment independents en el pla \(\mathcal{B} = \{\vec{u}, \vec{v}\}\) formen una base. Qualsevol vector \(\vec{w}\) es pot escriure de forma única com a combinació lineal seva. <br> Els coeficients de la combinació lineal són les components en aquesta base.
       </li>
-      <div class="formula-box">
+      </ul><div class="formula-box"><ul>
   $$\vec{w} = a\vec{u} + b\vec{v} \implies \vec{w} = (a, b)_{\mathcal{B}}$$
-       </div> 
+       </div> <ul>
       <li><strong> <a href="https://www.geogebra.org/graphing/bqt4sbvz"> Base canònica:</a> </strong> Els vectors   \(\{\vec{e_1}=(1,0), \vec{e_2}=(0,1)\}\) formen una base canònica. Qualsevol vector \(\vec{w}\) es pot escriure de forma única com a combinació lineal:
-   <div class="formula-box">
+   </ul><div class="formula-box"><ul>
   $$\vec{w} = x\vec{e_1} + y\vec{e_2} \implies \vec{v} = (x, y) $$
        </div> 
         Les components en base canònica són les components cartesianes.
@@ -230,19 +232,19 @@ li { margin-bottom: 8px; }
 <p>El resultat del producte escalar és un <strong>nombre real</strong> (un escalar).</p>
 <ul>
 <li><strong>Forma polar (mètode geomètric):</strong>  
- <div class="formula-box"> <span class="formula"> $$ \vec{u} \cdot \vec{v} = |\vec{u}| \cdot |\vec{v}| \cdot \cos\alpha $$</span></div>
+</ul> <div class="formula-box"><ul> <span class="formula"> $$ \vec{u} \cdot \vec{v} = |\vec{u}| \cdot |\vec{v}| \cdot \cos\alpha $$</span></div>
 </li>
-<li><strong>Forma cartesiana (mètode algebraic):</strong>   <div class="formula-box">  <span class="formula"> $$ \vec{u} \cdot \vec{v} = u_x \cdot v_x + u_y \cdot v_y $$</span> </div> </li>
+<ul> <li><strong>Forma cartesiana (mètode algebraic):</strong> </ul>   <div class="formula-box">  <span class="formula"> $$ \vec{u} \cdot \vec{v} = u_x \cdot v_x + u_y \cdot v_y $$</span> </div> </li>
 </ul>
 </div>
 <div class="card">
 <h2>10. Aplicacions</h2>
 <ol class="indent-list no-bullets">
 <h3> <strong>10.1 Vectors paral·lels i perpendiculars a \(\vec{v} = (a, b)\) </strong></h3>
-<ul>
-<li><strong>Paral·lels:</strong> Si les seves components són proporcionals. <br/> Qualsevol vector proporcional. 
-  <div class="formula-box"> $$ k \cdot (a, b) = (ka, kb) $$ </div> </li>
-<li><strong>Perpendiculars (Ortogonals):</strong> Si el seu producte escalar és 0. <br/> S'intercanvien les components i es canvia un signe de dada:
+
+<strong>Paral·lels:</strong> Si les seves components són proporcionals. <br/> Qualsevol vector proporcional. 
+  </ul> <div class="formula-box"><ul> $$ k \cdot (a, b) = (ka, kb) $$ </div> </li>
+<strong>Perpendiculars (Ortogonals):</strong> Si el seu producte escalar és 0. <br/> S'intercanvien les components i es canvia un signe de dada:
       <div class="formula-box">  $$\vec{v}^\perp = (-b, a) \quad \text{o} \quad (b, -a)$$ </div>
       </li>
 </ul>
