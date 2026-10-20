@@ -30,6 +30,11 @@ body {
   line-height: 1.65;
 }
 .wrapper { max-width: 980px; margin: 0 auto; padding: 34px 20px 70px; }
+button {
+      border: 0; border-radius: 12px; background: #4f46e5; color: white;
+      font: inherit; font-weight: 700; padding: 12px 18px; cursor: pointer;
+      margin: 0 0 20px; box-shadow: 0 8px 20px #4f46e526;
+    }
  .hero {
       position: relative;
       overflow: hidden;
@@ -100,8 +105,6 @@ li { margin-bottom: 8px; }
   border-left: 5px solid #0066cc;
   padding: 20px 24px;
 }
-button{border:0;border-radius:12px;background:#4f46e5;color:white;font:inherit;font-weight:700;padding:12px 18px;cursor:pointer;margin:0 0 20px;box-shadow:0 8px 20px #4f46e526}
-button:hover{background:#3730a3}
 .callout h2 { color: #0047AB; }
 @media (max-width: 600px) {
   .wrapper { padding: 18px 12px 40px; }
@@ -230,10 +233,10 @@ button:hover{background:#3730a3}
 </ul>
 </div>
 <div class="card">
-<h2>  9. <a href="https://www.geogebra.org/m/bmdm4dre">  Producte escalar de vectors </a> (\(\vec{u} \cdot \vec{v}\))</h2>
+<h2>  9. <a href="https://www.geogebra.org/m/bmdm4dre">  Producte escalar de dos vectors     </a> \(\vec{u} \cdot \vec{v}\) </h2>
 <p>El resultat del producte escalar és un <strong>nombre real</strong> (un escalar).</p>
 <ul>
-<li><strong>Forma polar (mètode geomètric):</strong>  
+<li><strong>Forma polar (mètode geomètric):</strong>  &alpha; angle entre \( \vec{u}\)  i \(\ \vec{v}\)
 </ul> <div class="formula-box"><ul> <span class="formula"> $$ \vec{u} \cdot \vec{v} = |\vec{u}| \cdot |\vec{v}| \cdot \cos\alpha $$</span></div>
 </li>
 <ul> <li><strong>Forma cartesiana (mètode algebraic):</strong> </ul>   <div class="formula-box">  <span class="formula"> $$ \vec{u} \cdot \vec{v} = u_x \cdot v_x + u_y \cdot v_y $$</span> </div> </li>
@@ -242,12 +245,12 @@ button:hover{background:#3730a3}
 <div class="card">
 <h2>10. Aplicacions</h2>
 <ol class="indent-list no-bullets">
-<h3> <strong>10.1 Vectors paral·lels i perpendiculars a \(\vec{v} = (a, b)\) </strong></h3>
+<h3> <strong>10.1 Vectors paral·lels i perpendiculars a \(\vec{v} = (v_x, v_y)\) </strong></h3>
 
 <strong>Paral·lels:</strong> Si les seves components són proporcionals. <br/> Un vector paral·lel es construeix multiplicant o dividint les dues components pel mateix nombre. 
-  </ul> <div class="formula-box"><ul> $$ k \cdot (a, b) = (ka, kb) $$ </div> </li>
+  </ul> <div class="formula-box"><ul> $$ k \cdot (v_x, v_y) = (kv_x, kv_y) $$ </div> </li>
 <strong>Perpendiculars (Ortogonals):</strong> Si el seu producte escalar és 0. <br/> Un vector perpendicular es construeix intercanviant les components i canviant una de signe.
-      <div class="formula-box">  $$\vec{v}^\perp = (-b, a) \quad \text{o} \quad (b, -a)$$ </div>
+      <div class="formula-box">  $$\vec{v}^\perp = (-v_y, v_x) \quad \text{o} \quad (v_y, -v_x)$$ </div>
       </li>
 </ul>
 
@@ -256,14 +259,20 @@ button:hover{background:#3730a3}
 <div class="formula-box">
       $$\cos\alpha = \frac{\vec{u} \cdot \vec{v}}{|\vec{u}| \cdot |\vec{v}|} = \frac{u_x v_x + u_y v_y}{\sqrt{u_x^2 + u_y^2} \cdot \sqrt{v_x^2 + v_y^2}}$$
     </div>
-<h3><strong>10.3 Punt mig M entre dos punts \(A = (x_1, y_1)\) i \(B = (x_2, y_2)\)</strong></h3>
+
+<h3> <strong>10.3  Àrea d'un triangle</h2>
+<p>Donat un triangle format pels punts \(A, B\) i \(C\), l'àrea és la meitat de l'àrea del paral·lelogram generat pels vectors \(\vec{AB} = \vec{u}\)  i \(\vec{AC} = \vec{v}\), &alpha; angle entre \( \vec{u}\)  i \(\ \vec{v}\) </p>
+<div class="formula-box">
+      $$\text{Àrea} = \frac{1}{2} |\vec{u}| \cdot |\vec{v}|\cdot \sin\alpha$$
+    </div>
+<h3><strong>10.4 Punt mig M entre dos punts \(A = (x_1, y_1)\) i \(B = (x_2, y_2)\)</strong></h3>
 
 <p>És la mitjana aritmètica de les coordenades dels punts extrems.</p>
 <div class="formula-box">
       $$M = A+ \frac{1}{2} \vec{AB}  = \left(x_1 + \frac{x_2 - x_1}{2}, \, y_1 + \frac{y_2 - y_1}{2} \right) = \left( \frac{x_1 + x_2}{2}, \, \frac{y_1 + y_2}{2} \right)= \frac{A + B}{2}$$
     </div>
 
-<h3> <strong>10.4  Divisió d'un segment AB en n parts iguals</strong></h3>
+<h3> <strong>10.5  Divisió d'un segment AB en n parts iguals</strong></h3>
 <p>Per dividir un segment en \(n\) parts iguals cal trobar \(n-1\) punts intermedis. <p>El vector \(\vec{p}\) és l'enèsima part del vector  \(\vec{AB}\) i els punts es calculen sumant aquest vector de forma acumulativa.</p>
 <div class="formula-box">
       $$\vec{p} = \frac{1}{n} \vec{AB}$$
@@ -277,24 +286,19 @@ button:hover{background:#3730a3}
     </div>
 
 
-<h3> <strong>10.5  Relació entre els vèrtices d'un paral·lelogram ABCD</strong></h3>
+<h3> <strong>10.6  Relació entre els vèrtices d'un paral·lelogram ABCD</strong></h3>
 <p>En un paral·lelogram de vèrtices consecutius \(A, B, C, D\):</p>
 <div class="formula-box">   <ul>
 <li>Els costats oposats són vectors iguals: \(\vec{AB} = \vec{DC} \quad \text{o} \quad \vec{AD} = \vec{BC}\)</li>
 <li>Les diagonals es tallen en el seu punt mig: \(M_{AC} = M_{BD} \implies \frac{A+C}{2} = \frac{B+D}{2}\)</li>
 </div></ul>
 
-<h3> <strong>10.6  Aplicacions a la física</strong></h3>
+<h3> <strong>10.7  Aplicacions a la física</strong></h3>
 <p><strong>Suma de forces/velocitats:</strong> La força o velocitat resultant és la suma vectorial per components de totes les forces individuals aplicades:</p>
 <div class="formula-box">
       $$\vec{F}_{\text{total}} = \sum \vec{F}_i = \left( \sum F_{ix}, \sum F_{iy} \right)$$
     </div>
 
-<h3> <strong>10.7  Àrea d'un triangle</h2>
-<p>Donat un triangle format pels punts \(A, B\) i \(C\), l'àrea és la meitat de l'àrea del paral·lelogram generat pels vectors \(\vec{AB} = (u_1, u_2)\) i \(\vec{AC} = (v_1, v_2)\):</p>
-<div class="formula-box">
-      $$\text{Àrea} = \frac{1}{2} |u_1 v_2 - u_2 v_1|$$
-    </div>
 </div>
 </ol>
   </div>
